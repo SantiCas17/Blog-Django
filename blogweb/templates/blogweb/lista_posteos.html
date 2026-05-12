@@ -1,0 +1,34 @@
+{% extends 'blogweb/base.html' %}
+{% block title %}Inicio - Mi Blog{% endblock %}
+{% block contenido %}
+    <h1 class="text-center my-5 fw-bold">Publicaciones Recientes</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            {% for post in posteos %}
+                <div class="card mb-4 shadow-sm border-0">
+                    {% if post.imagen %}
+                        <img src="{{ post.imagen.url }}" class="card-img-top" alt="{{ post.titulo }}" style="max-height: 400px; object-fit: cover;">
+                    {% endif %}
+                    <div class="card-body p-4">
+                        <h2 class="card-title fw-bold">{{ post.titulo }}</h2>
+                        <h6 class="card-subtitle mb-3 text-muted">
+                            Publicado por <strong>{{ post.autor.username }}</strong> el {{ post.fecha_creacion|date:"d/m/Y" }}
+                        </h6>
+                        <hr>
+                        <p class="card-text lh-base">{{ post.cuerpo }}</p>
+                        {% if request.user == post.autor %}
+                            <div class="mt-4 pt-3 border-top">
+                                <a href="{% url 'editar_post' post.pk %}" class="btn btn-outline-warning btn-sm me-2">Editar ✏️</a>
+                                <a href="{% url 'borrar_post' post.pk %}" class="btn btn-outline-danger btn-sm">Borrar 🗑️</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% empty %}
+                <div class="alert alert-info text-center" role="alert">
+                    Todavía no hay posteos publicados. ¡Sé el primero en escribir uno!
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

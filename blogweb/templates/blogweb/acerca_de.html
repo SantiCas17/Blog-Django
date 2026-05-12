@@ -1,0 +1,16 @@
+{% extends 'blogweb/base.html' %}
+{% block title %}Acerca de mí{% endblock %}
+{% block contenido %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0 p-5 text-center">
+            <h2 class="fw-bold mb-4">Acerca de mí</h2>
+            <p class="lead">¡Hola! Soy Santiago Ezequiel Castillo.</p>
+            <p>Soy estudiante de Desarrollo de Software y resido en San Salvador de Jujuy. Además de mi interés por la programación y el desarrollo backend con Python, soy un gran apasionado del trail running y formo parte de la organización general de Urku Trail & Running.</p>
+            <p>Construí esta plataforma como proyecto final para aplicar mis conocimientos en Django.</p>
+            <hr class="my-4">
+            <a href="{% url 'lista_posteos' %}" class="btn btn-outline-primary fw-bold">Volver al inicio</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

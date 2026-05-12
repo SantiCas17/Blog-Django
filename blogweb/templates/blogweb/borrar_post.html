@@ -1,0 +1,19 @@
+{% extends 'blogweb/base.html' %}
+{% block title %}Borrar Publicación{% endblock %}
+{% block contenido %}
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card shadow-sm border-0 text-center">
+            <div class="card-body p-5">
+                <h2 class="text-danger fw-bold mb-4">¿Estás seguro?</h2>
+                <p>Estás a punto de borrar el posteo: <br><strong>"{{ object.titulo }}"</strong></p>
+                <form method="POST" class="mt-4">
+                    {% csrf_token %}
+                    <a href="{% url 'lista_posteos' %}" class="btn btn-secondary me-2">Cancelar</a>
+                    <button type="submit" class="btn btn-danger fw-bold">Sí, borrar definitivamente</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

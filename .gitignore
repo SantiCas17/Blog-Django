@@ -1,0 +1,14 @@
+# Ignorar archivos de entorno virtual
+.venv/
+venv/
+env/
+
+# Ignorar archivos de configuración de IDEs
+db.sqlite3
+
+# Archivos cacheados de Python
+__pycache__/
+*.pyc
+
+# Archivos multimedia subidos por los usuarios
+media/
