@@ -1,6 +1,6 @@
 # MiBlog - Proyecto Final Coderhouse
 
-Este es el proyecto final del curso de Python en Coderhouse. Consiste en un blog web completamente funcional con sistema de usuarios, creación de contenido, y panel de administración, utilizando el patrón MVT.
+Este es el proyecto final del curso de Python en Coderhouse. Consiste en un blog web completamente funcional con sistema de usuarios, creación de contenido, y panel de administración, utilizando el patrón MVT. Lo pueden ver en este link https://santiagocastillo.pythonanywhere.com/
 
 ##  Características principales
 * **Autenticación:** Registro de nuevos usuarios, Login y Logout.
